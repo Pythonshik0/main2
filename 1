@@ -1,0 +1,46 @@
+HELP = """
+help - напечатать справку программе.
+add - добавить задачу в список ( название задачи запрашивает у пользователя.)
+show - напечатать все добавленные задачи."""
+tasks = []
+today = []
+tomorrow = []
+other = []
+
+run = True
+
+while run:
+    command = input("Введите команду :")
+    if command == "help":
+        print(HELP)
+    elif command == "show":
+        print(tasks)
+    elif command == "show1":
+        print(today)
+    elif command == "show2":
+        print(tomorrow)
+    elif command == "show3":
+        print(other)
+    elif command == "add":
+        task = input("Введите дату выполнения задачи: ")
+        if task == "Сегодня":
+            input("Введите задачу : ")
+            today.append(task)
+            print("Задача добавлена")
+        elif task == "Завтра":
+            input("Введите задачу : ")
+            tomorrow.append(task)
+            print("Задача добавлена!")
+        elif task == "В другое время":
+            input("Введите задачу : ")
+            other.append(task)
+            print("Мы добвали задачу на неопределенный срок!")
+        elif command == "exit":
+            print("Спасибо за использование! До свидания!")
+
+    else:
+        print("Неизвестная команда")
+        break
+print("До свидания")
+
+
